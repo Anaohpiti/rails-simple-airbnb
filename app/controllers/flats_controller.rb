@@ -8,6 +8,10 @@ class FlatsController < ApplicationController
   def show
   end
 
+  def search
+    @flat = Flat.search(params[:search])
+  end
+
   def new
     @flat = Flat.new
   end
@@ -47,6 +51,6 @@ class FlatsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def flat_params
-    params.require(:flat).permit(:name, :address, :description, :price_per_night, :number_of_guests)
+    params.require(:flat).permit(:name, :address, :description, :price_per_night, :number_of_guests,:search)
   end
 end
