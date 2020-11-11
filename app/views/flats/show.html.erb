@@ -1,0 +1,25 @@
+<%= link_to "Back to flat list", flats_path, class: "btn btn-primary"%>
+
+<div class="card bg-light mb-3" style="max-width: 18rem;">
+  <div class="card-header"><%=@flat.name%></div>
+  <div class="card-body">
+    <p class="card-text"><%=@flat.address%></p>
+  </div>
+</div>
+<div class="card bg-light mb-3" style="max-width: 18rem;">
+  <div class="card-header">A bit more about this property</div>
+  <div class="card-body">
+    <h5 class="card-title">Light card title</h5>
+    <p class="card-text"> <%=@flat.description%></p>
+  </div>
+</div>
+<div class="card bg-light mb-3" style="max-width: 18rem;">
+  <div class="card-header">Details</div>
+  <div class="card-body">
+    <p class="card-text"> <%= @flat.number_of_guests %>🧑🏽‍🤝‍🧑🏽</p>
+    <p class="card-text"> <%= @flat.price_per_night %>💸</p>
+  </div>
+</div>
+
+<%= link_to "Edit the flat", edit_flat_path(@flat), class: "btn btn-primary"%>
+<%= link_to "Remove", flat_path(@flat), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" }%>
